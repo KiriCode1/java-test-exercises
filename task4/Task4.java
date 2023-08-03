@@ -18,7 +18,7 @@ class Task4 {
 			}
 		}
 
-		System.out.println("Количество шагов: " + Integer.toString(count));
+		System.out.print(count);
 	}
 
 	private static int sumArgs(String[] ints) {
