@@ -1,11 +1,15 @@
 class Task1 {
 	public static void main(String[] args) {
-		int n = Integer.parseInt(args[0]);
+		try {
+			int n = Integer.parseInt(args[0]);
 
-		int m = Integer.parseInt(args[1]);
+			int m = Integer.parseInt(args[1]);
 
-		int[] circleArray = makeCircle(n);
-		makePath(n, m, circleArray);
+			int[] circleArray = makeCircle(n);
+			makePath(n, m, circleArray);
+		} catch (NullPointerException npe) {
+			System.out.println("Пожалуйста, введите аргументы");
+		}
 	}
 
 	private static int[] makeCircle(int len) {

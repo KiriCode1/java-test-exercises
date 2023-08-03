@@ -1,24 +1,28 @@
 class Task4 {
 	public static void main(String[] args) {
-		int avg = Math.round(sumArgs(args) / args.length);
-		int count = 0;
+		try {
+			int avg = Math.round(sumArgs(args) / args.length);
+			int count = 0;
 
-		for (int i = 0; i <= args.length - 1; i++) {
-			int intArg = Integer.parseInt(args[i]);
-			while (intArg != avg) {
-				if (intArg < avg) {
-					intArg += 1;
-					count += 1;
-				} else if (intArg > avg) {
-					intArg -= 1;
-					count += 1;
-				} else {
-					args[i] = Integer.toString(intArg);
+			for (int i = 0; i <= args.length - 1; i++) {
+				int intArg = Integer.parseInt(args[i]);
+				while (intArg != avg) {
+					if (intArg < avg) {
+						intArg += 1;
+						count += 1;
+					} else if (intArg > avg) {
+						intArg -= 1;
+						count += 1;
+					} else {
+						args[i] = Integer.toString(intArg);
+					}
 				}
 			}
-		}
 
-		System.out.print(count);
+			System.out.print(count);
+		} catch (NullPointerException npe) {
+			System.out.println("Пожалуйста, введите аргументы");
+		}
 	}
 
 	private static int sumArgs(String[] ints) {
